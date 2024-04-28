@@ -3,7 +3,7 @@ class StringConst {
   static const String settings = 'Settings';
   static const String userName = 'Test';
   static const String userEmail = 'Test@gmail.com';
-  static const String signOut = 'Sign Out';
+  static const String logOut = 'LogOut';
   static const String darkMood = 'Dark Mode';
   static const String notification = 'Notification';
   static const String account = 'Account';

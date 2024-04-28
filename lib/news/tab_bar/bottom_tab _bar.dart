@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/news/ui/news_information_screen.dart';
 import 'package:news_wave/news/utils/colors_const.dart';
@@ -34,35 +35,43 @@ class TabScreenState extends State<TabScreen>
   @override
   Widget build(BuildContext context) {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 20,
+    return PopScope(
+      canPop: false,
+      onPopInvoked : (didPop){
+        SystemNavigator.pop();
+      },
+      child: Scaffold(
         backgroundColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
-        bottom: TabBar(
-          dividerColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
-          isScrollable: false,
-          controller: tabController,
-          indicatorColor: ColorsConst.orangeColor,
-          tabs: const [
-            Tab(text: 'All News'),
-            Tab(text: 'Business'),
-            Tab(text: 'Entertainment'),
-            Tab(text: 'Health'),
-          ],
-          labelColor:
-              darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
-          unselectedLabelColor:
-              darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 10,
+          backgroundColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
+          bottom: TabBar(
+            dividerColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
+            isScrollable: false,
+            controller: tabController,
+            indicatorColor: ColorsConst.orangeColor,
+            tabs: const [
+              Tab(text: 'All News'),
+              Tab(text: 'Business'),
+              Tab(text: 'Entertainment'),
+              Tab(text: 'Health'),
+            ],
+            labelColor:
+                darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
+            unselectedLabelColor:
+                darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
+          ),
         ),
-      ),
-      body: TabBarView(
-        controller: tabController,
-        children: const [
-          NewsInformationScreen(),
-          NewsInformationScreen(),
-          NewsInformationScreen(),
-          NewsInformationScreen(),
-        ],
+        body: TabBarView(
+          controller: tabController,
+          children: const [
+            NewsInformationScreen(),
+            NewsInformationScreen(),
+            NewsInformationScreen(),
+            NewsInformationScreen(),
+          ],
+        ),
       ),
     );
   }

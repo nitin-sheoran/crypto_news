@@ -1,11 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:news_wave/news/login/ui/login_screen.dart';
 import 'package:news_wave/news/provider/news_provider.dart';
 import 'package:news_wave/news/service/news_service.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'news/tab_bar/nevigation_bar.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home: const LoginScreen(),
       ),
     );
   }

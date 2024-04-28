@@ -8,6 +8,10 @@ class ColorsConst {
   static const Color blackColor = Colors.black;
   static const Color black54Color = Colors.black54;
   static const Color redColor = Colors.red;
+  static const Color white54Color = Colors.white54;
+  static const Color greenColor = Colors.green;
+  static const Color blueColor = Colors.blue;
+  static const Color yellowColor = Colors.yellow;
   static Color? red100Color = Colors.red.shade100;
   static Color? gray800Color = Colors.grey.shade800;
 }

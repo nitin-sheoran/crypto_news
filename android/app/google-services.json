@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "54454235211",
+    "project_id": "news-wave-eca83",
+    "storage_bucket": "news-wave-eca83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54454235211:android:1578e762a20f8bbcadddce",
+        "android_client_info": {
+          "package_name": "com.example.news_wave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54454235211-idlcslgaukv7k3jr88aga82th8tth5hm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.news_wave",
+            "certificate_hash": "31a7ed9085d263ee5fba06f8ae8acc8ced1105a1"
+          }
+        },
+        {
+          "client_id": "54454235211-at71qc7hoq6ik31aom3a22jhs0d2nuqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG7htWZc2dGYeOXI3HyGjG45fuq8khlI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54454235211-at71qc7hoq6ik31aom3a22jhs0d2nuqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "54454235211-ui14f1lnv1oe2cpggpm5isgrh3qhlhvn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newsWave"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

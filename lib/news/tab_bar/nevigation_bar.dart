@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/ui/setting_screen.dart';
+import 'package:news_wave/news/ui/crypto/crypto_coin_list_screen.dart';
+import 'package:news_wave/news/ui/settings/setting_screen.dart';
 import 'package:news_wave/news/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import 'bottom_tab _bar.dart';
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> list = [
     const TabScreen(),
     const TabScreen(),
-    const TabScreen(),
+    const CryptoCoinListScreen(),
     const SettingScreen(),
   ];
 
@@ -30,8 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: darkMode ? Color(0xff1F2125) : const Color(0xffF6F7F7),
         currentIndex: currentIndex,
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
         enableFeedback: false,
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
@@ -54,21 +55,21 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(
               Icons.search,
             ),
-            label: "PortFolio",
+            label: "Search",
             backgroundColor: darkMode ? Colors.white : Colors.black,
           ),
           BottomNavigationBarItem(
             icon: const Icon(
-              Icons.save,
+              Icons.currency_bitcoin,
             ),
-            label: "Home",
+            label: "Crypto",
             backgroundColor: darkMode ? Colors.white : Colors.black,
           ),
           BottomNavigationBarItem(
             icon: const Icon(
               Icons.settings,
             ),
-            label: "PortFolio",
+            label: "Settings",
             backgroundColor: darkMode ? Colors.white : Colors.black,
           ),
         ],
