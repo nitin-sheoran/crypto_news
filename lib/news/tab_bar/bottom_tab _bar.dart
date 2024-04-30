@@ -50,7 +50,7 @@ class TabScreenState extends State<TabScreen>
             dividerColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
             isScrollable: false,
             controller: tabController,
-            indicatorColor: ColorsConst.orangeColor,
+            indicatorColor: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
             tabs: const [
               Tab(text: 'All News'),
               Tab(text: 'Business'),

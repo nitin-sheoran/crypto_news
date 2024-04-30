@@ -20,8 +20,26 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
     return Scaffold(
       backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
+      appBar: AppBar(
+        backgroundColor:
+            darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
+        title: Text(
+          'News',
+          style: TextStyle(
+              color:
+                  darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
+        ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
+            )),
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 16),
+        padding: const EdgeInsets.only(left: 10, right: 10, top: 4),
         child: Card(
           color: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
           surfaceTintColor:
@@ -35,7 +53,7 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
               color: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 14, right: 14),
+              padding: const EdgeInsets.only(top: 20, left: 8, right: 8,bottom: 20),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,11 +65,19 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                             bottomLeft: Radius.circular(10),
                             topLeft: Radius.circular(10),
                             topRight: Radius.circular(10)),
-                        child: Image.network(
-                          widget.newsArticle.urlToImage ?? '',
-                          height: 220,
-                          fit: BoxFit.cover,
-                        ),
+                        child: widget.newsArticle.urlToImage != null
+                            ? Image.network(
+                                widget.newsArticle.urlToImage ?? '',
+                                height: 200,
+                                fit: BoxFit.cover,
+                              )
+                            : Container(
+                                height: 200,
+                                color: ColorsConst.whiteColor,
+                                child: Center(
+                                    child: Image.network(
+                                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s')),
+                              ),
                       ),
                     ),
                     const SizedBox(
@@ -63,7 +89,8 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                           children: [
                             Text('|',
                                 style: TextStyle(
-                                    fontSize: 48, color: ColorsConst.orangeColor)),
+                                    fontSize: 48,
+                                    color: ColorsConst.cyanAccentColor)),
                           ],
                         ),
                         const SizedBox(width: 8),

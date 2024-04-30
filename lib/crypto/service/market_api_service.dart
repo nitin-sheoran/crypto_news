@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:news_wave/news/model/crypto_coin_info.dart';
+import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 
 class MarketApiService {
   static Future<List<CryptoCoinInfo>> getApiData() async {

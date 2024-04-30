@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/news/model/news_model.dart';
@@ -36,6 +37,17 @@ class NewsScreen extends State<NewsInformationScreen> {
         color: ColorsConst.whiteColor,
       ),
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor:
+              darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
+          title: Text(
+            'All News',
+            style: TextStyle(
+                color:
+                    darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
+          ),
+        ),
         body: FutureBuilder<List<Articles>>(
           future: newsProvider.newsApiService.fetchCollegeNews(),
           builder: (context, snapshot) {
@@ -45,6 +57,8 @@ class NewsScreen extends State<NewsInformationScreen> {
               return Text('Error: ${snapshot.error}');
             } else {
               List<Articles>? articles = snapshot.data;
+              articles
+                  ?.sort((a, b) => b.publishedAt!.compareTo(a.publishedAt!));
               return Column(
                 children: [
                   Column(
@@ -62,10 +76,17 @@ class NewsScreen extends State<NewsInformationScreen> {
                                 builder: (BuildContext context) {
                                   return ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
-                                    child: Image.network(
-                                      article.urlToImage ?? '',
-                                      fit: BoxFit.cover,
-                                    ),
+                                    child: article.urlToImage != null
+                                        ? Image.network(
+                                            article.urlToImage ?? '',
+                                            fit: BoxFit.cover,
+                                          )
+                                        : Container(
+                                            color: ColorsConst.whiteColor,
+                                            child: Center(
+                                                child: Image.network(
+                                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s')),
+                                          ),
                                   );
                                 },
                               );
@@ -114,10 +135,17 @@ class NewsScreen extends State<NewsInformationScreen> {
                                     width: 100,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
-                                      child: Image.network(
-                                        articles?[index].urlToImage ?? '',
-                                        fit: BoxFit.cover,
-                                      ),
+                                      child: articles?[index].urlToImage != null
+                                          ? Image.network(
+                                              articles![index].urlToImage!,
+                                              fit: BoxFit.cover,
+                                            )
+                                          : Container(
+                                              color: ColorsConst.whiteColor,
+                                              child:  Center(
+                                                  child: Image.network(
+                                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s')),
+                                            ),
                                     ),
                                   ),
                                   title: Text(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_wave/news/model/crypto_coin_info.dart';
+import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/news/utils/colors_const.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +21,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
     return Scaffold(
       backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.whiteColor,
       appBar: AppBar(
+        titleSpacing: -8,
         surfaceTintColor: darkMode
             ? ColorsConst.blackColor
             : ColorsConst.whiteColor,
@@ -28,20 +29,20 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
           widget.cryptoCoinInfo.name.toString(),
           style:  TextStyle(color: darkMode
               ? ColorsConst.whiteColor
-              : ColorsConst.blackColor),
+              : ColorsConst.whiteColor),
         ),
         leading: IconButton(
           icon:  Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
             color: darkMode
                 ? ColorsConst.whiteColor
-                : ColorsConst.blackColor,
+                : ColorsConst.whiteColor,
           ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.whiteColor,
+        backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
       ),
       body: SingleChildScrollView(
         child: Padding(

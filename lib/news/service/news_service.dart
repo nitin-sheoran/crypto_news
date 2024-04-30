@@ -7,7 +7,7 @@ class NewsApiService {
 
   Future<List<Articles>> fetchCollegeNews() async {
     final response = await http.get(
-      Uri.parse('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=$apiKey'),
+      Uri.parse('https://newsapi.org/v2/everything?q=all&apiKey=$apiKey'),
     );
 
     if (response.statusCode == 200) {

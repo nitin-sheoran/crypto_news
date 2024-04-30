@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/ui/crypto/crypto_coin_list_screen.dart';
-import 'package:news_wave/news/ui/settings/setting_screen.dart';
+import 'package:news_wave/crypto/ui/crypto_coin_list_screen.dart';
+import 'package:news_wave/news/ui/news_information_screen.dart';
+import 'package:news_wave/news/ui/settings/ui/setting_screen.dart';
 import 'package:news_wave/news/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import 'bottom_tab _bar.dart';
@@ -15,8 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> list = [
-    const TabScreen(),
-    const TabScreen(),
+    const NewsInformationScreen(),
     const CryptoCoinListScreen(),
     const SettingScreen(),
   ];
@@ -40,9 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = index;
           });
         },
-        selectedItemColor: ColorsConst.orangeColor,
-        unselectedItemColor: darkMode ? Colors.white54 : Colors.grey,
-        elevation: 8,
+        selectedItemColor: darkMode ? Colors.white : Colors.black,
+        unselectedItemColor: darkMode ? Colors.white38 : Colors.grey[400],
         items:  [
            BottomNavigationBarItem(
             icon: const Icon(
@@ -51,18 +50,18 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Home",
             backgroundColor: darkMode ?ColorsConst.whiteColor : Colors.black,
           ),
+          // BottomNavigationBarItem(
+          //   icon: const Icon(
+          //     Icons.search,
+          //   ),
+          //   label: "Search",
+          //   backgroundColor: darkMode ? Colors.white : Colors.black,
+          // ),
           BottomNavigationBarItem(
             icon: const Icon(
-              Icons.search,
+              Icons.bar_chart,
             ),
-            label: "Search",
-            backgroundColor: darkMode ? Colors.white : Colors.black,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.currency_bitcoin,
-            ),
-            label: "Crypto",
+            label: "Market",
             backgroundColor: darkMode ? Colors.white : Colors.black,
           ),
           BottomNavigationBarItem(
