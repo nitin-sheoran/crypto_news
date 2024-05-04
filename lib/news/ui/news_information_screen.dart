@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/news/model/news_model.dart';
@@ -42,7 +41,7 @@ class NewsScreen extends State<NewsInformationScreen> {
           backgroundColor:
               darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
           title: Text(
-            'All News',
+            'Crypto News',
             style: TextStyle(
                 color:
                     darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
@@ -57,8 +56,7 @@ class NewsScreen extends State<NewsInformationScreen> {
               return Text('Error: ${snapshot.error}');
             } else {
               List<Articles>? articles = snapshot.data;
-              articles
-                  ?.sort((a, b) => b.publishedAt!.compareTo(a.publishedAt!));
+              articles?.sort((a, b) => b.publishedAt!.compareTo(a.publishedAt!));
               return Column(
                 children: [
                   Column(

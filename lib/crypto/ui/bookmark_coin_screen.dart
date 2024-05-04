@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
@@ -7,17 +6,16 @@ import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/news/utils/colors_const.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SavedCoinsScreen extends StatefulWidget {
-  const SavedCoinsScreen({Key? key}) : super(key: key);
+class BookMarkCoinsScreen extends StatefulWidget {
+  const BookMarkCoinsScreen({Key? key}) : super(key: key);
 
   @override
-  _SavedCoinsScreenState createState() => _SavedCoinsScreenState();
+  _BookMarkCoinsScreenState createState() => _BookMarkCoinsScreenState();
 }
 
-class _SavedCoinsScreenState extends State<SavedCoinsScreen> {
+class _BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
   List<CryptoCoinInfo> savedCoins = [];
 
   @override
@@ -51,7 +49,7 @@ class _SavedCoinsScreenState extends State<SavedCoinsScreen> {
         surfaceTintColor:
             darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
         title: Text(
-          'Saved Coins',
+          'BookMark Coins',
           style: TextStyle(
             color: darkMode ? ColorsConst.whiteColor : ColorsConst.whiteColor,
             fontSize: 20,
@@ -70,7 +68,7 @@ class _SavedCoinsScreenState extends State<SavedCoinsScreen> {
       body: savedCoins.isEmpty
           ?  Center(
               child: Text(
-                'No saved coins...',
+                'NO BOOKMARK COINS...',
                 style: TextStyle(fontSize: 16,color: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor),
               ),
             )

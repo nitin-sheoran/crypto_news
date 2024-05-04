@@ -5,7 +5,6 @@ import 'package:news_wave/news/provider/news_provider.dart';
 import 'package:news_wave/news/service/news_service.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'news/tab_bar/nevigation_bar.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();

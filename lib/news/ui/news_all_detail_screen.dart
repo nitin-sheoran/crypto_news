@@ -21,6 +21,7 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
     return Scaffold(
       backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
       appBar: AppBar(
+        titleSpacing: -8,
         backgroundColor:
             darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         title: Text(
