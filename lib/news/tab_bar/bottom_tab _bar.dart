@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/news/ui/news_information_screen.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import '../provider/news_provider.dart';
 

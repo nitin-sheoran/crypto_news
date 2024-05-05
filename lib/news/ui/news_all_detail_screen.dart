@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/news/model/news_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 
 class NewsAllDetailScreen extends StatefulWidget {
@@ -38,6 +38,10 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
               Icons.arrow_back_ios,
               color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
             )),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(14),
+          bottomLeft: Radius.circular(14),
+        )),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10, top: 4),

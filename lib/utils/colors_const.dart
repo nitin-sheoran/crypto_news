@@ -15,4 +15,5 @@ class ColorsConst {
   static const Color cyanAccentColor = Colors.cyanAccent;
   static Color? red100Color = Colors.red.shade100;
   static Color? gray800Color = Colors.grey.shade800;
+  static Color? blue100Color = Colors.blue.shade100;
 }

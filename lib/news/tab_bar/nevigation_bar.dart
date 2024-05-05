@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/crypto/ui/crypto_coin_list_screen.dart';
 import 'package:news_wave/news/ui/news_information_screen.dart';
-import 'package:news_wave/news/ui/settings/ui/setting_screen.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/settings/ui/setting_screen.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
-import 'bottom_tab _bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

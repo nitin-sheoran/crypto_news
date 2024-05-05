@@ -4,8 +4,8 @@ import 'package:news_wave/news/model/news_model.dart';
 import 'package:news_wave/news/provider/news_provider.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/news/ui/news_all_detail_screen.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
-import 'package:news_wave/news/utils/string_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -46,6 +46,10 @@ class NewsScreen extends State<NewsInformationScreen> {
                 color:
                     darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
           ),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(14),
+            bottomLeft: Radius.circular(14),
+          )),
         ),
         body: FutureBuilder<List<Articles>>(
           future: newsProvider.newsApiService.fetchCollegeNews(),

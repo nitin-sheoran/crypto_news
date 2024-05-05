@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 
 class HelpScreen extends StatefulWidget {
@@ -32,6 +30,7 @@ class _HelpScreenState extends State<HelpScreen> {
       backgroundColor:
       darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
       appBar: AppBar(
+        titleSpacing: -1,
         backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         leading: Padding(
           padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
@@ -44,7 +43,6 @@ class _HelpScreenState extends State<HelpScreen> {
                 : ColorsConst.whiteColor,),
           ),
         ),
-        titleSpacing: -1,
         title: Text(
           "Help",
           style: TextStyle(
@@ -56,6 +54,10 @@ class _HelpScreenState extends State<HelpScreen> {
                 : ColorsConst.whiteColor,
           ),
         ),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(14),
+          bottomLeft: Radius.circular(14),
+        )),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
@@ -92,15 +94,17 @@ class _HelpScreenState extends State<HelpScreen> {
                     return null;
                   },
                   decoration:  InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Subject',
-                    hintStyle: TextStyle(color: darkMode
+                    border:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8)
+                    ),
+                    labelText: 'Subject',
+                    labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
                         : ColorsConst.blackColor)
                   ),
                     style:  TextStyle(color:darkMode
                         ? ColorsConst.whiteColor
-                        : ColorsConst.blackColor), // White text for input
+                        : ColorsConst.blackColor),
                     cursorColor: darkMode
                         ? ColorsConst.whiteColor
                         : ColorsConst.blackColor,
@@ -115,19 +119,21 @@ class _HelpScreenState extends State<HelpScreen> {
                     return null;
                   },
                   decoration:  InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Description',
-                    hintStyle: TextStyle(color: darkMode
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8)
+                    ),
+                    labelText: 'Description',
+                    labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
-                        : ColorsConst.blackColor), // White hint text
+                        : ColorsConst.blackColor),
                   ),
                   maxLines: 4,
                   style:  TextStyle(color:darkMode
                       ? ColorsConst.whiteColor
-                      : ColorsConst.blackColor), // White text for input
+                      : ColorsConst.blackColor),
                   cursorColor: darkMode
                       ? ColorsConst.whiteColor
-                      : ColorsConst.blackColor, // White cursor for better visibility
+                      : ColorsConst.blackColor,
                 ),
                 const SizedBox(height: 30),
                 GestureDetector(

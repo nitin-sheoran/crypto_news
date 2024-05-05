@@ -4,7 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -64,6 +64,10 @@ class _BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
             color: ColorsConst.whiteColor,
           ),
         ),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(14),
+          bottomLeft: Radius.circular(14),
+        )),
       ),
       body: savedCoins.isEmpty
           ?  Center(

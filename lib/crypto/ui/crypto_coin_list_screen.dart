@@ -7,7 +7,7 @@ import 'package:news_wave/crypto/service/market_api_service.dart';
 import 'package:news_wave/crypto/ui/crypto_market_detail_screen.dart';
 import 'package:news_wave/crypto/ui/bookmark_coin_screen.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
+import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -97,6 +97,10 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
         ],
         backgroundColor:
         darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(14),
+          bottomLeft: Radius.circular(14),
+        )),
       ),
       body: Column(
         children: [
@@ -118,7 +122,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                         ? ColorsConst.whiteColor
                         : ColorsConst.blackColor,
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                 ),
                 style: TextStyle(
                   color: darkMode
@@ -249,9 +253,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                                   width: 18,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
-                                    color: darkMode
-                                        ? Colors.blue[100]
-                                        : Colors.blue[100],
+                                    color: ColorsConst.blue100Color,
                                   ),
                                   child: Text(
                                     cryptoCoinInfo.marketCapRank
@@ -280,8 +282,8 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                                           .marketCapChangePercentage24h
                                           .toString()) >=
                                           0
-                                          ? Colors.green
-                                          : Colors.red,
+                                          ? ColorsConst.greenColor
+                                          : ColorsConst.redColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12),
                                 ),
@@ -316,14 +318,6 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
     return false;
   }
 
-  void saveCoin(CryptoCoinInfo coinInfo) async {
-    if (prefs != null) {
-      List<String> savedCoins = prefs!.getStringList('saved_coins') ?? [];
-      savedCoins.add(jsonEncode(coinInfo.toJson()));
-      prefs!.setStringList('saved_coins', savedCoins);
-    }
-  }
-
   String formatMarketCap(num marketCap) {
     final units = ["", "K", "M", "B", "T"];
     int scale = 0;
@@ -335,6 +329,14 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
     String trimmedValue = formattedValue.replaceAll(RegExp(r'\.?0+$'), '');
     trimmedValue += units[scale];
     return trimmedValue;
+  }
+
+  void saveCoin(CryptoCoinInfo coinInfo) async {
+    if (prefs != null) {
+      List<String> savedCoins = prefs!.getStringList('saved_coins') ?? [];
+      savedCoins.add(jsonEncode(coinInfo.toJson()));
+      prefs!.setStringList('saved_coins', savedCoins);
+    }
   }
 
   void removeCoin(CryptoCoinInfo coinInfo) async {
@@ -350,136 +352,4 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
     }
   }
 }
-class TextFieldScreen extends StatefulWidget {
-  @override
-  _TextFieldScreenState createState() => _TextFieldScreenState();
-}
 
-class _TextFieldScreenState extends State<TextFieldScreen> {
-  List<Widget> rows = [
-    Row(
-      children: [
-        Container(
-          height: 40,
-          width: 200,
-          constraints: BoxConstraints(minWidth: 80), // Minimum width
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
-          ),
-        ),
-        Container(
-          height: 40,
-          width: 200,
-          constraints: BoxConstraints(minWidth: 80), // Minimum width
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
-          ),
-        ),
-      ],
-    ),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Text Fields Example'),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(children: rows),
-                IconButton(
-                  icon: const Icon(Icons.add),
-                  onPressed: () {
-                    setState(() {
-                      rows.add(
-                        Row(
-                          children: [
-                            Container(
-                              height: 40,
-                              width: 200,
-                              constraints: const BoxConstraints(
-                                  minWidth: 80), // Minimum width
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 40,
-                              width: 200,
-                              constraints:
-                              BoxConstraints(minWidth: 80), // Minimum width
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    });
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TextFieldRow extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 40,
-          width: 200,
-          constraints: BoxConstraints(minWidth: 80), // Minimum width
-          child: TextField(
-            decoration: InputDecoration(
-              border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(0)),
-            ),
-          ),
-        ),
-        Container(
-          height: 40,
-          width: 200,
-          constraints: BoxConstraints(minWidth: 80), // Minimum width
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}

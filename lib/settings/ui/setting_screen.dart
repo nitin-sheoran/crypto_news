@@ -1,17 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:news_wave/news/login/service/google_service.dart';
-import 'package:news_wave/news/login/ui/login_screen.dart';
+import 'package:news_wave/login/service/google_service.dart';
 import 'package:news_wave/news/provider/news_provider.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/ui/settings/ui/language_screen.dart';
-import 'package:news_wave/news/ui/settings/ui/help_screen.dart';
-import 'package:news_wave/news/utils/colors_const.dart';
-import 'package:news_wave/news/utils/string_const.dart';
+import 'package:news_wave/settings/ui/about_us_screen.dart';
+import 'package:news_wave/settings/ui/help_screen.dart';
+import 'package:news_wave/settings/ui/privacy_security_screen.dart';
+import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
+
+import '../../login/ui/login_screen.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -84,8 +84,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                   image: NetworkImage(
-                                    FirebaseAuth
-                                        .instance.currentUser!.photoURL
+                                    FirebaseAuth.instance.currentUser!.photoURL
                                         .toString(),
                                   ),
                                 ),
@@ -134,8 +133,8 @@ class _SettingScreenState extends State<SettingScreen> {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 26, right: 26, top: 26,bottom: 40),
+                      padding: const EdgeInsets.only(
+                          left: 26, right: 26, top: 26, bottom: 40),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -185,7 +184,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                                 ? Colors.white54
                                                 : ColorsConst.black54Color,
                                             onChanged: (bool value) {
-                                              Provider.of<ThemeProvider>(context,
+                                              Provider.of<ThemeProvider>(
+                                                      context,
                                                       listen: false)
                                                   .darkMode = value;
                                             },
@@ -196,7 +196,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                     ),
                                     const Spacer(),
                                     const Divider(),
-                                    const Spacer(),                                  Row(
+                                    const Spacer(),
+                                    Row(
                                       children: [
                                         Text(
                                           StringConst.notification,
@@ -285,14 +286,16 @@ class _SettingScreenState extends State<SettingScreen> {
                                                 style: TextStyle(
                                                     color: darkMode
                                                         ? ColorsConst.whiteColor
-                                                        : ColorsConst.blackColor),
+                                                        : ColorsConst
+                                                            .blackColor),
                                               ),
                                               content: Text(
                                                 'Are you sure to logout!',
                                                 style: TextStyle(
                                                     color: darkMode
                                                         ? ColorsConst.whiteColor
-                                                        : ColorsConst.blackColor),
+                                                        : ColorsConst
+                                                            .blackColor),
                                               ),
                                               actions: [
                                                 TextButton(
@@ -336,8 +339,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                         );
                                       },
                                       child: Container(
-                                        decoration: const BoxDecoration(
-                                        ),
+                                        decoration: const BoxDecoration(),
                                         child: Row(
                                           children: [
                                             Text(
@@ -391,13 +393,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                     const Divider(),
                                     const Spacer(),
                                     GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const LanguageScreen()));
-                                      },
+                                      onTap: () {},
                                       child: Container(
                                         decoration: const BoxDecoration(),
                                         child: Row(
@@ -431,7 +427,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           ),
                           const SizedBox(height: 14),
                           Text(
-                            StringConst.privacyAndSecurityHelp,
+                            StringConst.about,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
@@ -448,7 +444,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                 : ColorsConst.cardColor,
                             elevation: 0,
                             child: Container(
-                              height: 120,
+                              height: 180,
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),
@@ -470,8 +466,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                       },
                                       child: Container(
                                         height: 24,
-                                        decoration: const BoxDecoration(
-                                        ),
+                                        decoration: const BoxDecoration(),
                                         child: Row(
                                           children: [
                                             Text(
@@ -499,27 +494,76 @@ class _SettingScreenState extends State<SettingScreen> {
                                     const Spacer(),
                                     const Divider(),
                                     const Spacer(),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          StringConst.privacyAndSecurity,
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color: darkMode
-                                                ? ColorsConst.whiteColor
-                                                : ColorsConst.blackColor,
-                                          ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const AboutUsScreen()),
+                                        );
+                                      },
+                                      child: Container(
+                                        decoration: const BoxDecoration(),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              StringConst.aboutUs,
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: darkMode
+                                                    ? ColorsConst.whiteColor
+                                                    : ColorsConst.blackColor,
+                                              ),
+                                            ),
+                                            const Spacer(),
+                                            Icon(
+                                              Icons.arrow_forward_ios,
+                                              size: 14,
+                                              color: darkMode
+                                                  ? ColorsConst.whiteColor
+                                                  : ColorsConst.blackColor,
+                                            ),
+                                          ],
                                         ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.arrow_forward_ios,
-                                          size: 14,
-                                          color: darkMode
-                                              ? ColorsConst.whiteColor
-                                              : ColorsConst.blackColor,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    const Divider(),
+                                    const Spacer(),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => const PrivacySecurityScreen()),
+                                        );
+                                      },
+                                      child: Container(
+                                        decoration: const BoxDecoration(),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              StringConst.privacyAndSecurity,
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: darkMode
+                                                    ? ColorsConst.whiteColor
+                                                    : ColorsConst.blackColor,
+                                              ),
+                                            ),
+                                            const Spacer(),
+                                            Icon(
+                                              Icons.arrow_forward_ios,
+                                              size: 14,
+                                              color: darkMode
+                                                  ? ColorsConst.whiteColor
+                                                  : ColorsConst.blackColor,
+                                            ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   ],
                                 ),
