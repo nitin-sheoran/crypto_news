@@ -19,11 +19,11 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
   @override
   Widget build(BuildContext context) {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
-    DateTime lastUpdatedDate = DateTime.parse(widget.cryptoCoinInfo.lastUpdated.toString());
+    DateTime lastUpdatedDate =
+        DateTime.parse(widget.cryptoCoinInfo.lastUpdated.toString());
     String formattedDate = DateFormat('dd MMM yyyy').format(lastUpdatedDate);
 
     return Scaffold(
-
       backgroundColor:
           darkMode ? ColorsConst.darkColor : ColorsConst.whiteColor,
       appBar: AppBar(
@@ -53,427 +53,430 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
           bottomLeft: Radius.circular(14),
         )),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 20, bottom: 8),
+        child: Expanded(
           child: Card(
-            elevation: 2,
+            elevation: 10,
+            shadowColor: ColorsConst.whiteColor,
             child: Container(
               padding: const EdgeInsets.all(16),
-              height: 800,
+              height: 760,
               decoration: BoxDecoration(
                 color:
                     darkMode ? ColorsConst.darkColor : ColorsConst.whiteColor,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Rank',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: darkMode
-                              ? ColorsConst.white54Color
-                              : ColorsConst.blackColor,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Rank',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: darkMode
+                                ? ColorsConst.white54Color
+                                : ColorsConst.blackColor,
+                          ),
                         ),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.marketCapRank.toString(),
-                        style: TextStyle(
-                          color: darkMode
-                              ? ColorsConst.whiteColor
-                              : ColorsConst.blackColor,
+                        Text(
+                          widget.cryptoCoinInfo.marketCapRank.toString(),
+                          style: TextStyle(
+                            color: darkMode
+                                ? ColorsConst.whiteColor
+                                : ColorsConst.blackColor,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                          darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Name',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.name.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                          darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Current Price',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.currentPrice)}',
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Market Cap',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        formatMarketCap(widget.cryptoCoinInfo.marketCap!),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Symbol',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.symbol.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'LastUpdate',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        formattedDate,
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'High24h',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.high24h)}',
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Low24h',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.low24h)}',
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'MCCPercentage24h',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        '${widget.cryptoCoinInfo.marketCapChangePercentage24h}%',
-                        style: TextStyle(
-                            color: double.parse(widget.cryptoCoinInfo
-                                .marketCapChangePercentage24h
-                                .toString()) >=
-                                0
-                                ? ColorsConst.greenColor
-                                : ColorsConst.redColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'MaxSupply',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.atlChangePercentage.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'TotalSupply',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.totalSupply.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'ATL',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.atl.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'CirculatingSupply',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.priceChangePercentage24h
-                            .toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Divider(
-                      color:
-                      darkMode ? ColorsConst.white54Color : Colors.black12),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Total Volume',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: darkMode
-                                ? ColorsConst.white54Color
-                                : ColorsConst.blackColor),
-                      ),
-                      Text(
-                        widget.cryptoCoinInfo.totalVolume.toString(),
-                        style: TextStyle(
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Name',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.name.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Current Price',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.currentPrice)}',
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Market Cap',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          formatMarketCap(widget.cryptoCoinInfo.marketCap!),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Symbol',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.symbol.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'LastUpdate',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          formattedDate,
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'High24h',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.high24h)}',
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Low24h',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          '\u{20B9} ${NumberFormat('#,##0.0').format(widget.cryptoCoinInfo.low24h)}',
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'MCCPercentage24h',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          '${widget.cryptoCoinInfo.marketCapChangePercentage24h}%',
+                          style: TextStyle(
+                              color: double.parse(widget.cryptoCoinInfo
+                                          .marketCapChangePercentage24h
+                                          .toString()) >=
+                                      0
+                                  ? ColorsConst.greenColor
+                                  : ColorsConst.redColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'MaxSupply',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.atlChangePercentage.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'TotalSupply',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.totalSupply.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'ATL',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.atl.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'CirculatingSupply',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.priceChangePercentage24h
+                              .toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Divider(
+                        color:
+                            darkMode ? ColorsConst.white54Color : Colors.black12),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total Volume',
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: darkMode
+                                  ? ColorsConst.white54Color
+                                  : ColorsConst.blackColor),
+                        ),
+                        Text(
+                          widget.cryptoCoinInfo.totalVolume.toString(),
+                          style: TextStyle(
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -481,6 +484,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
       ),
     );
   }
+
   String formatMarketCap(num marketCap) {
     final units = ["", "K", "M", "B", "T"];
     int scale = 0;
@@ -493,5 +497,4 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
     trimmedValue += units[scale];
     return trimmedValue;
   }
-
 }
