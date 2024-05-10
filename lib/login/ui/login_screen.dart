@@ -38,9 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
             )
           : Stack(
               children: [
-                Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTupMo83tIDvaNHuC4GkiMtm2n7EpjSb0TO2g&usqp=CAU',
-                  // 'https://t3.ftcdn.net/jpg/01/37/54/78/240_F_137547872_DdtEyxjBo7mZ3nPMwXCHYxbgxYIRsL3v.jpg',
+                Image.asset(
+                  'assets/images/loginimages.jpg',
                   height: double.infinity,
                   width: double.infinity,
                   fit: BoxFit.cover,
