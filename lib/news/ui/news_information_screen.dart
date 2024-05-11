@@ -167,7 +167,9 @@ class NewsScreen extends State<NewsInformationScreen> {
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.end,
                                         children: [
-                                          Text(formattedDate,style: const TextStyle(fontSize: 12,color: ColorsConst.blackColor),),
+                                          Text(formattedDate,style: TextStyle(fontSize: 12, color: darkMode
+                                              ? ColorsConst.whiteColor
+                                              : ColorsConst.blackColor,),),
                                         ],
                                       ),
                                     ],
