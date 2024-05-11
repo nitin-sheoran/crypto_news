@@ -117,7 +117,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                         DateTime lastUpdatedDate = DateTime.parse(articles![index].publishedAt.toString());
                         String formattedDate = DateFormat('dd MMM yyyy hh:mm a').format(lastUpdatedDate);
                         return Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.only(left: 16,right: 16),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -134,7 +134,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                 },
                                 child: ListTile(
                                   leading: SizedBox(
-                                    height: 120,
+                                    height: 80,
                                     width: 100,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
@@ -154,7 +154,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                   title: Column(
                                     children: [
                                       Text(
-                                        articles?[index].title ?? '',
+                                        articles[index].title ?? '',
                                         maxLines: 2,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -174,6 +174,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                   ),
                                 ),
                               ),
+                              const Divider(endIndent: 20,indent: 20,),
                             ],
                           ),
                         );

@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/news/model/news_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NewsAllDetailScreen extends StatefulWidget {
   const NewsAllDetailScreen({required this.newsArticle, super.key});
@@ -20,8 +19,10 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
   @override
   Widget build(BuildContext context) {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
-    DateTime lastUpdatedDate = DateTime.parse(widget.newsArticle.publishedAt.toString());
-    String formattedDate = DateFormat('dd MMM yyyy hh:mm a').format(lastUpdatedDate);
+    DateTime lastUpdatedDate =
+        DateTime.parse(widget.newsArticle.publishedAt.toString());
+    String formattedDate =
+        DateFormat('dd MMM yyyy hh:mm a').format(lastUpdatedDate);
     return Scaffold(
       backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
       appBar: AppBar(
@@ -42,7 +43,24 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
               Icons.arrow_back_ios,
               color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
             )),
-        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: IconButton(
+              onPressed: () {
+                Share.share(
+''
+                );
+              },
+              icon: Icon(
+                Icons.share,
+                color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
+              ),
+            ),
+          ),
+        ],
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(14),
           bottomLeft: Radius.circular(14),
         )),
@@ -53,7 +71,7 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
           color: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
           surfaceTintColor:
               darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
-          elevation: 400,
+          elevation: 10,
           child: Container(
             height: double.infinity,
             width: double.infinity,
@@ -62,7 +80,8 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
               color: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 20, left: 8, right: 8,bottom: 20),
+              padding:
+                  const EdgeInsets.only(top: 20, left: 8, right: 8, bottom: 20),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,7 +145,9 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(formattedDate,style: const TextStyle(fontSize: 16,color: ColorsConst.blackColor)),
+                    Text(formattedDate,
+                        style: const TextStyle(
+                            fontSize: 16, color: ColorsConst.blackColor)),
                     const SizedBox(
                       height: 10,
                     ),
