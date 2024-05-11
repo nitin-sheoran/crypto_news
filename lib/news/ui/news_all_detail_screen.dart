@@ -146,8 +146,10 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                       height: 10,
                     ),
                     Text(formattedDate,
-                        style: const TextStyle(
-                            fontSize: 16, color: ColorsConst.blackColor)),
+                        style: TextStyle(
+                            fontSize: 16, color:darkMode
+                            ? ColorsConst.whiteColor
+                            : ColorsConst.blackColor,)),
                     const SizedBox(
                       height: 10,
                     ),
