@@ -40,11 +40,10 @@ class NewsScreen extends State<NewsInformationScreen> {
           automaticallyImplyLeading: false,
           backgroundColor:
               darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
-          title: Text(
+          title: const Text(
             'Crypto News',
             style: TextStyle(
-                color:
-                    darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
+                color: ColorsConst.whiteColor),
           ),
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(14),
@@ -115,6 +114,8 @@ class NewsScreen extends State<NewsInformationScreen> {
                     child: ListView.builder(
                       itemCount: articles?.length,
                       itemBuilder: (context, index) {
+                        DateTime lastUpdatedDate = DateTime.parse(articles![index].publishedAt.toString());
+                        String formattedDate = DateFormat('dd MMM yyyy hh:mm a').format(lastUpdatedDate);
                         return Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
@@ -126,7 +127,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => NewsAllDetailScreen(
-                                        newsArticle: articles![index],
+                                        newsArticle: articles[index],
                                       ),
                                     ),
                                   );
@@ -137,9 +138,9 @@ class NewsScreen extends State<NewsInformationScreen> {
                                     width: 100,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
-                                      child: articles?[index].urlToImage != null
+                                      child: articles[index].urlToImage != null
                                           ? Image.network(
-                                              articles![index].urlToImage!,
+                                              articles[index].urlToImage!,
                                               fit: BoxFit.cover,
                                             )
                                           : Container(
@@ -150,16 +151,26 @@ class NewsScreen extends State<NewsInformationScreen> {
                                             ),
                                     ),
                                   ),
-                                  title: Text(
-                                    articles?[index].title ?? '',
-                                    maxLines: 2,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: darkMode
-                                          ? ColorsConst.whiteColor
-                                          : ColorsConst.blackColor,
-                                    ),
+                                  title: Column(
+                                    children: [
+                                      Text(
+                                        articles?[index].title ?? '',
+                                        maxLines: 2,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                          color: darkMode
+                                              ? ColorsConst.whiteColor
+                                              : ColorsConst.blackColor,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        children: [
+                                          Text(formattedDate,style: const TextStyle(fontSize: 12,color: ColorsConst.blackColor),),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),

@@ -20,8 +20,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
   @override
   Widget build(BuildContext context) {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
-    DateTime lastUpdatedDate =
-        DateTime.parse(widget.cryptoCoinInfo.lastUpdated.toString());
+    DateTime lastUpdatedDate = DateTime.parse(widget.cryptoCoinInfo.lastUpdated.toString());
     String formattedDate = DateFormat('dd MMM yyyy').format(lastUpdatedDate);
 
     return Scaffold(
@@ -62,13 +61,13 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
               height: 200,
               child: MarketStateChart(
                 marketCapChangePercentage24h:
-                    widget.cryptoCoinInfo.marketCapChangePercentage24h!,
+                    widget.cryptoCoinInfo.marketCapChangePercentage24h!, date: formattedDate,
               ),
             ),
             Expanded(
               child: Card(
                 elevation: 10,
-                shadowColor: ColorsConst.whiteColor,
+                shadowColor: darkMode ? ColorsConst.black54Color : ColorsConst.whiteColor,
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   height: 760,
@@ -531,42 +530,78 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
 }
 
 
-
 class MarketStateChart extends StatelessWidget {
   final double marketCapChangePercentage24h;
+  final String date;
 
   const MarketStateChart({
-    super.key,
+    Key? key,
     required this.marketCapChangePercentage24h,
-  });
+    required this.date,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     bool isPositive = marketCapChangePercentage24h >= 0;
     Color color = isPositive ? Colors.green : Colors.red;
-    return Container(
-      padding: EdgeInsets.all(8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            '${marketCapChangePercentage24h.toStringAsFixed(2)}%',
-            // Display the percentage
-            style: TextStyle(
-              fontSize: 12,
+
+    return Column(
+      children: [
+        Text(
+          date,
+          style: TextStyle(fontSize: 12, color: Colors.black),
+        ),
+        SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: CustomPaint(
+            size: Size(100, 100), // Adjust size as needed
+            painter: MarketStateChartPainter(
+              percentageChange: marketCapChangePercentage24h,
               color: color,
             ),
           ),
-          const SizedBox(height: 4),
-          Container(
-            width: 4,
-            height: marketCapChangePercentage24h.abs() * 3,
-            // Adjust the multiplier as needed
-            color: color,
-          ),
-        ],
-      ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          '${marketCapChangePercentage24h.toStringAsFixed(2)}%',
+          style: TextStyle(fontSize: 12, color: color),
+        ),
+      ],
     );
   }
 }
+
+class MarketStateChartPainter extends CustomPainter {
+  final double percentageChange;
+  final Color color;
+
+  MarketStateChartPainter({
+    required this.percentageChange,
+    required this.color,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = color
+      ..strokeWidth = 2
+      ..strokeCap = StrokeCap.round;
+
+    final double centerX = size.width / 2;
+    final double centerY = size.height / 2;
+    final double lineHeight = percentageChange.abs() * size.height;
+
+    canvas.drawLine(
+      Offset(centerX, centerY),
+      Offset(centerX, centerY + lineHeight),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+

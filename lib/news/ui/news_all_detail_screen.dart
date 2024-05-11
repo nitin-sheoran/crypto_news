@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/news/model/news_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
@@ -18,6 +20,8 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
   @override
   Widget build(BuildContext context) {
     bool darkMode = Provider.of<ThemeProvider>(context).darkMode;
+    DateTime lastUpdatedDate = DateTime.parse(widget.newsArticle.publishedAt.toString());
+    String formattedDate = DateFormat('dd MMM yyyy hh:mm a').format(lastUpdatedDate);
     return Scaffold(
       backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
       appBar: AppBar(
@@ -95,7 +99,7 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                             Text('|',
                                 style: TextStyle(
                                     fontSize: 48,
-                                    color: ColorsConst.cyanAccentColor)),
+                                    color: ColorsConst.blueColor)),
                           ],
                         ),
                         const SizedBox(width: 8),
@@ -120,7 +124,11 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
+                    ),
+                    Text(formattedDate,style: const TextStyle(fontSize: 16,color: ColorsConst.blackColor)),
+                    const SizedBox(
+                      height: 10,
                     ),
                     Text(
                       widget.newsArticle.description!,

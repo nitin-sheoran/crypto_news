@@ -30,13 +30,12 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
 
   void onRefresh() async {
     await Future.delayed(const Duration(microseconds: 1000));
-    getData();
     _refreshController.refreshCompleted();
+    getData();
   }
 
   void onLoading() async {
     await Future.delayed(const Duration(microseconds: 1000));
-    getData();
     _refreshController.loadComplete();
   }
 

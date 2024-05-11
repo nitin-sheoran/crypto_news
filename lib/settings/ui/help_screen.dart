@@ -30,7 +30,7 @@ class _HelpScreenState extends State<HelpScreen> {
       backgroundColor:
       darkMode ? ColorsConst.darkColor : ColorsConst.cardColor,
       appBar: AppBar(
-        titleSpacing: -1,
+        titleSpacing: -8,
         backgroundColor: darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         leading: Padding(
           padding: const EdgeInsets.only(left: 0, top: 18, bottom: 18),
@@ -70,7 +70,7 @@ class _HelpScreenState extends State<HelpScreen> {
                  Text(
                   'Submit a query',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     fontSize: 24,
                     color: darkMode
                         ? ColorsConst.whiteColor
@@ -82,7 +82,7 @@ class _HelpScreenState extends State<HelpScreen> {
                   'Love something or facing an issue? Share your feedback or report a problem. Your insights help shape our future updates!',
                   style: TextStyle(fontSize: 18,color: darkMode
                       ? ColorsConst.whiteColor
-                      : ColorsConst.blackColor),
+                      : ColorsConst.black54Color),
                 ),
                 const SizedBox(height: 30),
                 TextFormField(
@@ -100,7 +100,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     labelText: 'Subject',
                     labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
-                        : ColorsConst.blackColor)
+                        : ColorsConst.black54Color)
                   ),
                     style:  TextStyle(color:darkMode
                         ? ColorsConst.whiteColor
@@ -125,7 +125,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     labelText: 'Description',
                     labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
-                        : ColorsConst.blackColor),
+                        : ColorsConst.black54Color),
                   ),
                   maxLines: 4,
                   style:  TextStyle(color:darkMode

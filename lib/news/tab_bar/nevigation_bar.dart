@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = index;
           });
         },
-        selectedItemColor: darkMode ? Colors.white : Colors.black,
+        selectedItemColor: darkMode ? Colors.blue[200] : Colors.blue,
         unselectedItemColor: darkMode ? Colors.white38 : Colors.grey[400],
         items:  [
            BottomNavigationBarItem(

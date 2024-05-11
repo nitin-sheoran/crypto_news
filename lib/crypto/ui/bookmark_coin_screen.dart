@@ -3,19 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
+import 'package:news_wave/crypto/ui/crypto_market_detail_screen.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class BookMarkCoinsScreen extends StatefulWidget {
-  const BookMarkCoinsScreen({Key? key}) : super(key: key);
+  const BookMarkCoinsScreen({super.key});
 
   @override
-  _BookMarkCoinsScreenState createState() => _BookMarkCoinsScreenState();
+  BookMarkCoinsScreenState createState() => BookMarkCoinsScreenState();
 }
 
-class _BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
+class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
   List<CryptoCoinInfo> savedCoins = [];
 
   @override
@@ -151,84 +152,95 @@ class _BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                       ),
                     ],
                   ),
-                  child: ListTile(
-                    leading: Image.network(
-                      coinInfo.image.toString(),
-                      height: 30,
-                    ),
-                    title: Text(
-                      coinInfo.name.toString(),
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: darkMode
-                            ? ColorsConst.whiteColor
-                            : ColorsConst.blackColor,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                CryptoMaretDetailScreen(
+                                    cryptoCoinInfo: coinInfo)),
+                      );
+                    },
+                    child: ListTile(
+                      leading: Image.network(
+                        coinInfo.image.toString(),
+                        height: 30,
                       ),
-                    ),
-                    subtitle: Row(
-                      children: [
-                        Container(
-                          height: 18,
-                          width: 18,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            color:
-                                darkMode ? Colors.blue[100] : Colors.blue[100],
+                      title: Text(
+                        coinInfo.name.toString(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: darkMode
+                              ? ColorsConst.whiteColor
+                              : ColorsConst.blackColor,
+                        ),
+                      ),
+                      subtitle: Row(
+                        children: [
+                          Container(
+                            height: 18,
+                            width: 18,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color:
+                                  darkMode ? Colors.blue[100] : Colors.blue[100],
+                            ),
+                            child: Text(
+                              coinInfo.marketCapRank.toString(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: darkMode
+                                      ? ColorsConst.blackColor
+                                      : ColorsConst.whiteColor),
+                            ),
                           ),
-                          child: Text(
-                            coinInfo.marketCapRank.toString(),
-                            textAlign: TextAlign.center,
+                          const SizedBox(width: 4),
+                          Text(
+                            coinInfo.symbol.toString(),
                             style: TextStyle(
                                 color: darkMode
-                                    ? ColorsConst.blackColor
-                                    : ColorsConst.whiteColor),
+                                    ? ColorsConst.white54Color
+                                    : ColorsConst.gray800Color,
+                            fontSize: 12),
                           ),
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          coinInfo.symbol.toString(),
-                          style: TextStyle(
+                          const SizedBox(width: 4),
+                          Text(
+                            '${coinInfo.marketCapChangePercentage24h}%',
+                            style: TextStyle(
+                                color: double.parse(coinInfo.marketCapChangePercentage24h.toString()) >= 0 ? Colors.green : Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12
+                            ),
+                          ),
+                        ],
+                      ),
+                      trailing: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            '\u{20B9} ${NumberFormat('#,##0.0').format(coinInfo.currentPrice)}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
                               color: darkMode
-                                  ? ColorsConst.white54Color
+                                  ? ColorsConst.whiteColor
+                                  : ColorsConst.blackColor,
+                            ),
+                          ),
+                          Text(
+                            'Market Cap ${formatMarketCap(coinInfo.marketCap!)}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: darkMode
+                                  ? ColorsConst.whiteColor
                                   : ColorsConst.gray800Color,
-                          fontSize: 12),
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          '${coinInfo.marketCapChangePercentage24h}%',
-                          style: TextStyle(
-                              color: double.parse(coinInfo.marketCapChangePercentage24h.toString()) >= 0 ? Colors.green : Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    trailing: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '\u{20B9} ${NumberFormat('#,##0.0').format(coinInfo.currentPrice)}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.blackColor,
-                          ),
-                        ),
-                        Text(
-                          'Market Cap ${formatMarketCap(coinInfo.marketCap!)}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: darkMode
-                                ? ColorsConst.whiteColor
-                                : ColorsConst.gray800Color,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -262,3 +274,4 @@ class _BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
     }
   }
 }
+
