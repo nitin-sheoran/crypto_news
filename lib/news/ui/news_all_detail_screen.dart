@@ -29,19 +29,19 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
         titleSpacing: -8,
         backgroundColor:
             darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
-        title: Text(
+        title: const Text(
           'News',
           style: TextStyle(
               color:
-                  darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor),
+                   ColorsConst.whiteColor),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
-              color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
+              color: ColorsConst.whiteColor,
             )),
         actions: [
           Padding(
@@ -52,9 +52,9 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
 ''
                 );
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.share,
-                color: darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
+                color: ColorsConst.whiteColor,
               ),
             ),
           ),
