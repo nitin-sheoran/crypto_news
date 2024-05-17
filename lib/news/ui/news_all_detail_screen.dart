@@ -31,9 +31,7 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
             darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         title: const Text(
           'News',
-          style: TextStyle(
-              color:
-                   ColorsConst.whiteColor),
+          style: TextStyle(color: ColorsConst.whiteColor),
         ),
         leading: IconButton(
             onPressed: () {
@@ -49,12 +47,12 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
             child: IconButton(
               onPressed: () {
                 Share.share(
-''
+                  '${widget.newsArticle.title}\n${widget.newsArticle.description}\n${widget.newsArticle.content}\n${widget.newsArticle.urlToImage}',
                 );
               },
               icon: const Icon(
                 Icons.share,
-                color: ColorsConst.whiteColor,
+                color: ColorsConst.white54Color,
               ),
             ),
           ),
@@ -147,9 +145,11 @@ class _NewsAllDetailScreenState extends State<NewsAllDetailScreen> {
                     ),
                     Text(formattedDate,
                         style: TextStyle(
-                            fontSize: 16, color:darkMode
-                            ? ColorsConst.whiteColor
-                            : ColorsConst.blackColor,)),
+                          fontSize: 16,
+                          color: darkMode
+                              ? ColorsConst.whiteColor
+                              : ColorsConst.blackColor,
+                        )),
                     const SizedBox(
                       height: 10,
                     ),

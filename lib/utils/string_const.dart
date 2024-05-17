@@ -14,8 +14,15 @@ class StringConst {
   static const String help = 'Help';
   static const String aboutUs = 'About Us?';
   static const String about = 'About?';
+  static const String cryptoMaretCap = 'Crypto Market Cap';
+  static const String searchCoins = 'Search...';
+  static const String share = 'Share';
+  static const String coinRemoved = 'Coin removed';
+  static const String coinBookMarks = 'Coin BookMark';
+  static const String coinBookMark = 'BookMark';
+  static const String marketCap = 'Market Cap';
+  static const String savedCoinsKey = 'saved_coins';
+
   static const String aboutTitle =
       'Your app description goes here. You can provide information about the purpose of the app, its features, and any other relevant details.';
-  static const String imgUrl =
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlkL_Ns6zGNiEwT-aRnMR109YSYYSg9a7Dxg&usqp=CAU';
 }

@@ -8,6 +8,7 @@ import 'package:news_wave/crypto/ui/crypto_market_detail_screen.dart';
 import 'package:news_wave/crypto/ui/bookmark_coin_screen.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -90,7 +91,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
         surfaceTintColor:
         darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
         title: Text(
-          'Crypto Market Cap',
+          StringConst.cryptoMaretCap,
           style: TextStyle(
             color: darkMode ? ColorsConst.whiteColor : ColorsConst.whiteColor,
             fontSize: 20,
@@ -126,15 +127,18 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                   filterCoins(value);
                 },
                 decoration: InputDecoration(
-                  hintText: 'Search Coins',
+                  hintText: StringConst.searchCoins,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   hintStyle: TextStyle(
                     color: darkMode
-                        ? ColorsConst.whiteColor
-                        : ColorsConst.blackColor,
+                        ? ColorsConst.white54Color
+                        : const Color(0xff37474F),
                   ),
+                  prefixIcon: Icon(Icons.search,color: darkMode
+                      ? ColorsConst.white54Color
+                      : const Color(0xff37474F),),
                   contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                 ),
                 style: TextStyle(
@@ -182,7 +186,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                           backgroundColor: darkMode
                               ? ColorsConst.white54Color
                               : ColorsConst.whiteColor,
-                          label: 'Share',
+                          label: StringConst.share,
                         ),
                         SlidableAction(
                           onPressed: (context) async {
@@ -190,12 +194,12 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                               removeCoin(cryptoCoinInfo);
                               ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                      content: Text('Coin removed')));
+                                      content: Text(StringConst.coinRemoved)));
                             } else {
                               saveCoin(cryptoCoinInfo);
                               ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                      content: Text('Coin BookMark')));
+                                      content: Text(StringConst.coinBookMarks)));
                             }
                             setState(() {
                               isSaved = !isSaved;
@@ -207,7 +211,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                           backgroundColor: darkMode
                               ? ColorsConst.white54Color
                               : ColorsConst.whiteColor,
-                          label: 'BookMark',
+                          label: StringConst.coinBookMark,
                         ),
                       ],
                     ),
@@ -254,7 +258,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                                     ),
                                   ),
                                   Text(
-                                    'Market Cap ${formatMarketCap(cryptoCoinInfo.marketCap!)}',
+                                    '${StringConst.marketCap} ${formatMarketCap(cryptoCoinInfo.marketCap!)}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 12,
@@ -325,7 +329,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
 
   bool isCoinSaved(CryptoCoinInfo coinInfo) {
     if (prefs != null) {
-      List<String>? savedCoins = prefs!.getStringList('saved_coins');
+      List<String>? savedCoins = prefs!.getStringList(StringConst.savedCoinsKey);
       if (savedCoins != null) {
         for (String savedCoin in savedCoins) {
           Map<String, dynamic> savedCoinMap = jsonDecode(savedCoin);
@@ -353,21 +357,21 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
 
   void saveCoin(CryptoCoinInfo coinInfo) async {
     if (prefs != null) {
-      List<String> savedCoins = prefs!.getStringList('saved_coins') ?? [];
+      List<String> savedCoins = prefs!.getStringList(StringConst.savedCoinsKey) ?? [];
       savedCoins.add(jsonEncode(coinInfo.toJson()));
-      prefs!.setStringList('saved_coins', savedCoins);
+      prefs!.setStringList(StringConst.savedCoinsKey, savedCoins);
     }
   }
 
   void removeCoin(CryptoCoinInfo coinInfo) async {
     if (prefs != null) {
-      List<String>? savedCoins = prefs!.getStringList('saved_coins');
+      List<String>? savedCoins = prefs!.getStringList(StringConst.savedCoinsKey);
       if (savedCoins != null) {
         savedCoins.removeWhere((savedCoin) {
           Map<String, dynamic> savedCoinMap = jsonDecode(savedCoin);
           return savedCoinMap['id'] == coinInfo.id;
         });
-        prefs!.setStringList('saved_coins', savedCoins);
+        prefs!.setStringList(StringConst.savedCoinsKey, savedCoins);
       }
     }
   }
