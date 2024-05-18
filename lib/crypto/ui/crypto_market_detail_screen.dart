@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
 
 class CryptoMaretDetailScreen extends StatefulWidget {
@@ -84,7 +85,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Rank',
+                              StringConst.rank,
                               style: TextStyle(
                                 fontSize: 14,
                                 color: darkMode
@@ -116,7 +117,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Name',
+                              StringConst.name,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -146,7 +147,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Current Price',
+                              StringConst.currentPrice,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -176,7 +177,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Market Cap',
+                              StringConst.marketCap,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -206,7 +207,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Symbol',
+                              StringConst.symbol,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode

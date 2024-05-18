@@ -22,6 +22,10 @@ class StringConst {
   static const String coinBookMark = 'BookMark';
   static const String marketCap = 'Market Cap';
   static const String savedCoinsKey = 'saved_coins';
+  static const String rank = 'Rank';
+  static const String name = 'Name';
+  static const String currentPrice = 'Current Price';
+  static const String symbol = 'Symbol';
 
   static const String aboutTitle =
       'Your app description goes here. You can provide information about the purpose of the app, its features, and any other relevant details.';

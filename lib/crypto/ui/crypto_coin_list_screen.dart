@@ -146,7 +146,6 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                       ? ColorsConst.whiteColor
                       : ColorsConst.blackColor,
                 ),
-
                 cursorColor: darkMode
                     ? ColorsConst.whiteColor
                     : ColorsConst.blackColor,
