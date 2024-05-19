@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_wave/login/service/google_service.dart';
 import 'package:news_wave/news/provider/news_provider.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
@@ -10,6 +11,8 @@ import 'package:news_wave/settings/ui/privacy_security_screen.dart';
 import 'package:news_wave/utils/colors_const.dart';
 import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../login/ui/login_screen.dart';
 
@@ -367,27 +370,35 @@ class _SettingScreenState extends State<SettingScreen> {
                                     const Spacer(),
                                     const Divider(),
                                     const Spacer(),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          StringConst.changePassword,
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color: darkMode
-                                                ? ColorsConst.whiteColor
-                                                : ColorsConst.blackColor,
-                                          ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Share.share('Coming soon');
+                                      },
+                                      child: Container(
+                                        decoration: const BoxDecoration(),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              'Share App',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: darkMode
+                                                    ? ColorsConst.whiteColor
+                                                    : ColorsConst.blackColor,
+                                              ),
+                                            ),
+                                            const Spacer(),
+                                            Icon(
+                                              Icons.arrow_forward_ios,
+                                              size: 14,
+                                              color: darkMode
+                                                  ? ColorsConst.whiteColor
+                                                  : ColorsConst.blackColor,
+                                            ),
+                                          ],
                                         ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.arrow_forward_ios,
-                                          size: 14,
-                                          color: darkMode
-                                              ? ColorsConst.whiteColor
-                                              : ColorsConst.blackColor,
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                     const Spacer(),
                                     const Divider(),
