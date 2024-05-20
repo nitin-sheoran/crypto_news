@@ -39,6 +39,14 @@ class StringConst {
   static const String myMail = 'nsheoran2005@gmail.com';
   static const String submitQuery = 'Submit Query';
 
+
+  /// Privacy Security Screen String
+  static const String privacySecurity = 'Privacy and Security';
+  static const String privacyAndSecurityInformation =
+      'Privacy and Security Information';
+  static const String privacySecurityTitle =
+      'Your privacy and security information goes here. You can provide details about the privacy policy, data security measures, and any other relevant information to ensure user privacy and security.';
+
   static const String aboutTitle =
       'Your app description goes here. You can provide information about the purpose of the app, its features, and any other relevant details.';
   static const String aboutDescription =

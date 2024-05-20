@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
 
 class PrivacySecurityScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class PrivacySecurityScreen extends StatelessWidget {
         backgroundColor:
             darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         title: const Text(
-          'Privacy and Security',
+          StringConst.privacySecurity,
           style: TextStyle(color: ColorsConst.whiteColor),
         ),
         leading: IconButton(
@@ -39,7 +40,7 @@ class PrivacySecurityScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Privacy and Security Information',
+              StringConst.privacyAndSecurityInformation,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -49,7 +50,7 @@ class PrivacySecurityScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Your privacy and security information goes here. You can provide details about the privacy policy, data security measures, and any other relevant information to ensure user privacy and security.',
+              StringConst.privacySecurityTitle,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w400,
