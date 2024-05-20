@@ -12,6 +12,7 @@ class ColorsConst {
   static const Color greenColor = Colors.green;
   static const Color blueColor = Colors.blue;
   static const Color yellowColor = Colors.yellow;
+  static const Color white70 = Colors.white70;
   static const Color cyanAccentColor = Colors.cyanAccent;
   static Color? red100Color = Colors.red.shade100;
   static Color? gray800Color = Colors.grey.shade800;

@@ -17,7 +17,7 @@ class AboutUsScreen extends StatelessWidget {
         backgroundColor:
             darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
         title: const Text(
-          'About Us',
+          StringConst.aboutUsTitle,
           style: TextStyle(color: ColorsConst.whiteColor),
         ),
         leading: IconButton(
@@ -41,12 +41,12 @@ class AboutUsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'About Our App',
+                StringConst.aboutOurApp,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
                   color:
-                      darkMode ? Colors.white70 : ColorsConst.blackColor,
+                      darkMode ? ColorsConst.white70 : ColorsConst.blackColor,
                 ),
               ),
               const SizedBox(height: 16),
@@ -55,7 +55,8 @@ class AboutUsScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
-                  color: darkMode ? Colors.white70 : Colors.black54,
+                  color:
+                      darkMode ? ColorsConst.white70 : ColorsConst.black54Color,
                 ),
               ),
               const SizedBox(height: 16),
@@ -63,19 +64,23 @@ class AboutUsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '\u2022 ',
+                    StringConst.descriptionDot,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                      color: darkMode
+                          ? ColorsConst.white54Color
+                          : ColorsConst.black54Color,
                     ),
                   ),
                   Flexible(
                     child: Text(
-                      'CryptoPulse is a powerful and comprehensive cryptocurrency news app that provides you with the latest and most important news from around the world. In the eternal world of Cryptocurrency, staying up-to-date is a vital necessity, and CryptoPulse takes care of that responsibility.',
+                      StringConst.aboutDescription,
                       style: TextStyle(
                         fontSize: 16,
-                        color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                        color: darkMode
+                            ? ColorsConst.white54Color
+                            : ColorsConst.black54Color,
                       ),
                     ),
                   ),
@@ -86,19 +91,23 @@ class AboutUsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '\u2022 ',
+                    StringConst.descriptionDot,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                      color: darkMode
+                          ? ColorsConst.white54Color
+                          : ColorsConst.black54Color,
                     ),
                   ),
                   Flexible(
                     child: Text(
-                      'CryptoPulse gives you access to all the latest news and updates related to all major cryptocurrencies like Bitcoin, Ethereum, Ripple, and Litecoin. This app will give you important information like daily market analysis, price trends, and upcoming events, which will help you understand the value of crypto market.',
+                      StringConst.aboutDescription1,
                       style: TextStyle(
                         fontSize: 16,
-                        color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                        color: darkMode
+                            ? ColorsConst.white54Color
+                            : ColorsConst.black54Color,
                       ),
                     ),
                   ),
@@ -109,19 +118,23 @@ class AboutUsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '\u2022 ',
+                    StringConst.descriptionDot,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                      color: darkMode
+                          ? ColorsConst.white54Color
+                          : ColorsConst.black54Color,
                     ),
                   ),
                   Flexible(
                     child: Text(
-                      'In addition, CryptoPulse also provides you with thought-provoking articles, expert opinions, and in-depth research that exposes you to new ideas in the crypto space. You will also find technical innovations, regulatory updates, and the latest developments in blockchain technology here.',
+                      StringConst.aboutDescription2,
                       style: TextStyle(
                         fontSize: 16,
-                        color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                        color: darkMode
+                            ? ColorsConst.white54Color
+                            : ColorsConst.black54Color,
                       ),
                     ),
                   ),
@@ -132,19 +145,23 @@ class AboutUsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '\u2022 ',
+                    StringConst.descriptionDot,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                      color: darkMode
+                          ? ColorsConst.white54Color
+                          : ColorsConst.black54Color,
                     ),
                   ),
                   Flexible(
                     child: Text(
-                      "CryptoPulse's user-friendly interface and customizable notifications help you reach the news that interests you. In this app you have access to the necessary features to immerse yourself in the crypto world without any offers and to stay safe.",
+                      StringConst.aboutDescription3,
                       style: TextStyle(
                         fontSize: 16,
-                        color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                        color: darkMode
+                            ? ColorsConst.white54Color
+                            : ColorsConst.black54Color,
                       ),
                     ),
                   ),
@@ -155,19 +172,23 @@ class AboutUsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '\u2022 ',
+                    StringConst.descriptionDot,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                      color: darkMode
+                          ? ColorsConst.white54Color
+                          : ColorsConst.black54Color,
                     ),
                   ),
                   Flexible(
                     child: Text(
-                      "CryptoPulse is an essential app for crypto enthusiasts, traders, and investors that keeps them connected to the forefront of the crypto world.",
+                      StringConst.aboutDescription4,
                       style: TextStyle(
                         fontSize: 16,
-                        color: darkMode ? ColorsConst.white54Color : Colors.black54,
+                        color: darkMode
+                            ? ColorsConst.white54Color
+                            : ColorsConst.black54Color,
                       ),
                     ),
                   ),

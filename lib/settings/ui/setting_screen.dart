@@ -372,7 +372,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                     const Spacer(),
                                     GestureDetector(
                                       onTap: () {
-                                        Share.share('Coming soon');
+                                        Share.share('Coming soon..');
                                       },
                                       child: Container(
                                         decoration: const BoxDecoration(),
