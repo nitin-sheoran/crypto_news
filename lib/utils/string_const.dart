@@ -11,7 +11,6 @@ class StringConst {
   static const String changePassword = 'Change Password';
   static const String language = 'Language';
   static const String privacyAndSecurity = 'Privacy and Security';
-  static const String help = 'Help';
   static const String aboutUs = 'About Us?';
   static const String about = 'About?';
   static const String cryptoMaretCap = 'Crypto Market Cap';
@@ -29,6 +28,17 @@ class StringConst {
   static const String aboutOurApp = 'About Our App';
   static const String descriptionDot = '\u2022 ';
   static const String aboutUsTitle = 'About Us';
+
+  /// Help Screen String
+  static const String help = 'Help';
+  static const String submitAQuery = 'Submit a query';
+  static const String helpTitle =
+      'Love something or facing an issue? Share your feedback or report a problem. Your insights help shape our future updates!';
+  static const String subject = 'Subject';
+  static const String description = 'Description';
+  static const String myMail = 'nsheoran2005@gmail.com';
+  static const String submitQuery = 'Submit Query';
+
   static const String aboutTitle =
       'Your app description goes here. You can provide information about the purpose of the app, its features, and any other relevant details.';
   static const String aboutDescription =

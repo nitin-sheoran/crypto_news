@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:news_wave/news/theme/theme_provider.dart';
 import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/utils/string_const.dart';
 import 'package:provider/provider.dart';
 
 class HelpScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _HelpScreenState extends State<HelpScreen> {
           ),
         ),
         title: Text(
-          "Help",
+          StringConst.help,
           style: TextStyle(
             fontFamily: 'Inter',
             fontSize: 20,
@@ -68,7 +69,7 @@ class _HelpScreenState extends State<HelpScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                  Text(
-                  'Submit a query',
+                   StringConst.submitAQuery,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 24,
@@ -79,7 +80,7 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
                 const SizedBox(height: 16),
                  Text(
-                  'Love something or facing an issue? Share your feedback or report a problem. Your insights help shape our future updates!',
+                   StringConst.helpTitle,
                   style: TextStyle(fontSize: 18,color: darkMode
                       ? ColorsConst.whiteColor
                       : ColorsConst.black54Color),
@@ -97,7 +98,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     border:  OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8)
                     ),
-                    labelText: 'Subject',
+                    labelText: StringConst.subject,
                     labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
                         : ColorsConst.black54Color)
@@ -122,7 +123,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8)
                     ),
-                    labelText: 'Description',
+                    labelText: StringConst.description,
                     labelStyle: TextStyle(color: darkMode
                         ? ColorsConst.whiteColor
                         : ColorsConst.black54Color),
@@ -143,7 +144,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     final Email email = Email(
                       body: description,
                       subject: subject,
-                      recipients: ['nsheoran2005@gmail.com'],
+                      recipients: [StringConst.myMail],
                       isHTML: false,
                     );
                     await FlutterEmailSender.send(email);
@@ -159,7 +160,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     ),
                     width: double.infinity,
                     height: 46,
-                    child: const Center(child: Text('Submit Query',style: TextStyle(
+                    child: const Center(child: Text(StringConst.submitQuery,style: TextStyle(
                         color: ColorsConst.whiteColor, fontSize: 18),)),
                   ),
                 ),
