@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:news_wave/utils/string_const.dart';
-import 'package:provider/provider.dart';
+import 'package:news_wave/all_imports.dart';
 
 class HelpScreen extends StatefulWidget {
   const HelpScreen({Key? key}) : super(key: key);
