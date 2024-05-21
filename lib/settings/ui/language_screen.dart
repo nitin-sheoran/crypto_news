@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:provider/provider.dart';
+import 'package:news_wave/all_imports.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
