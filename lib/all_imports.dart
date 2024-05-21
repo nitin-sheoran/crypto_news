@@ -25,6 +25,7 @@ export 'package:flutter/services.dart';
 export 'package:news_wave/news/ui/news_information_screen.dart';
 export 'package:news_wave/crypto/ui/crypto_coin_list_screen.dart';
 export 'package:news_wave/settings/ui/setting_screen.dart';
+export 'package:news_wave/news/theme/dark_mode_preference.dart';
 
 
 

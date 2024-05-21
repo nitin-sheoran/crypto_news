@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:news_wave/news/theme/dark_mode_preference.dart';
+import 'package:news_wave/all_imports.dart';
 
 class ThemeProvider with ChangeNotifier {
   bool _darkMode = false;

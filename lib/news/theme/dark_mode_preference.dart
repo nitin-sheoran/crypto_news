@@ -1,5 +1,4 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:news_wave/all_imports.dart';
 class DarkModePreference {
   static const String key = 'darkMode';
 
