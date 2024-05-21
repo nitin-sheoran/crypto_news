@@ -1,10 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:news_wave/news/model/news_model.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
+import 'package:news_wave/all_imports.dart';
 
 class NewsAllDetailScreen extends StatefulWidget {
   const NewsAllDetailScreen({required this.newsArticle, super.key});
