@@ -31,6 +31,8 @@ export 'package:news_wave/login/ui/login_screen.dart';
 export 'package:news_wave/settings/ui/about_us_screen.dart';
 export 'package:news_wave/settings/ui/help_screen.dart';
 export 'package:news_wave/settings/ui/privacy_security_screen.dart';
+export 'package:firebase_core/firebase_core.dart';
+
 
 
 
