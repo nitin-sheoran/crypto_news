@@ -1,6 +1,5 @@
-import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:news_wave/news/model/news_model.dart';
+import 'package:news_wave/all_imports.dart';
 
 class NewsApiService {
   final String apiKey = '0a7bdfe011a74df6b521cbddba406b33';

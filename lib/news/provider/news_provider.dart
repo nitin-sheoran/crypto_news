@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:news_wave/news/service/news_service.dart';
+import 'package:news_wave/all_imports.dart';
 
 class NewsProvider with ChangeNotifier {
   NewsApiService newsApiService;

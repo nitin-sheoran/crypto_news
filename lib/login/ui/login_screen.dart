@@ -1,8 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
-import 'package:flutter/material.dart';
-import 'package:news_wave/login/service/google_service.dart';
-import 'package:news_wave/news/tab_bar/nevigation_bar.dart';
-import 'package:news_wave/utils/colors_const.dart';
+import 'package:news_wave/all_imports.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

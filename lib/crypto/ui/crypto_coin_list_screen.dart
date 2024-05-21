@@ -1,18 +1,7 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
-import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
-import 'package:news_wave/crypto/service/market_api_service.dart';
-import 'package:news_wave/crypto/ui/crypto_market_detail_screen.dart';
-import 'package:news_wave/crypto/ui/bookmark_coin_screen.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:news_wave/utils/string_const.dart';
-import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:share_plus/share_plus.dart';
+import 'package:news_wave/all_imports.dart';
 
 class CryptoCoinListScreen extends StatefulWidget {
   const CryptoCoinListScreen({Key? key}) : super(key: key);

@@ -1,13 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:news_wave/all_imports.dart';
 import 'package:intl/intl.dart';
-import 'package:news_wave/news/model/news_model.dart';
-import 'package:news_wave/news/provider/news_provider.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/news/ui/news_all_detail_screen.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:news_wave/utils/string_const.dart';
-import 'package:provider/provider.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class NewsInformationScreen extends StatefulWidget {
   const NewsInformationScreen({super.key});
@@ -41,7 +33,7 @@ class NewsScreen extends State<NewsInformationScreen> {
           backgroundColor:
               darkMode ? ColorsConst.darkColor : ColorsConst.blueColor,
           title: const Text(
-            'Crypto News',
+            StringConst.cryptoNews,
             style: TextStyle(
                 color: ColorsConst.whiteColor),
           ),
@@ -86,7 +78,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                             color: ColorsConst.whiteColor,
                                             child: Center(
                                                 child: Image.network(
-                                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s')),
+                                                    StringConst.comingSoonImage)),
                                           ),
                                   );
                                 },
@@ -147,7 +139,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                                               color: ColorsConst.whiteColor,
                                               child:  Center(
                                                   child: Image.network(
-                                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s')),
+                                                      StringConst.comingSoonImage)),
                                             ),
                                     ),
                                   ),

@@ -1,13 +1,6 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
-import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
-import 'package:news_wave/crypto/ui/crypto_market_detail_screen.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:news_wave/all_imports.dart';
 
 class BookMarkCoinsScreen extends StatefulWidget {
   const BookMarkCoinsScreen({super.key});

@@ -1,8 +1,13 @@
 class StringConst {
+
+  /// Crypto News Screen String
   static const String latestNews = 'Latest News';
+  static const String cryptoNews = 'Crypto News';
+
+  static const String comingSoonImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s';
+
+
   static const String settings = 'Settings';
-  static const String userName = 'Test';
-  static const String userEmail = 'Test@gmail.com';
   static const String logOut = 'LogOut';
   static const String darkMood = 'Dark Mode';
   static const String notification = 'Notification';
@@ -13,6 +18,8 @@ class StringConst {
   static const String privacyAndSecurity = 'Privacy and Security';
   static const String aboutUs = 'About Us?';
   static const String about = 'About?';
+
+  /// Crypto Coins Screen String
   static const String cryptoMaretCap = 'Crypto Market Cap';
   static const String searchCoins = 'Search...';
   static const String share = 'Share';
@@ -25,9 +32,6 @@ class StringConst {
   static const String name = 'Name';
   static const String currentPrice = 'Current Price';
   static const String symbol = 'Symbol';
-  static const String aboutOurApp = 'About Our App';
-  static const String descriptionDot = '\u2022 ';
-  static const String aboutUsTitle = 'About Us';
 
   /// Help Screen String
   static const String help = 'Help';
@@ -39,7 +43,6 @@ class StringConst {
   static const String myMail = 'nsheoran2005@gmail.com';
   static const String submitQuery = 'Submit Query';
 
-
   /// Privacy Security Screen String
   static const String privacySecurity = 'Privacy and Security';
   static const String privacyAndSecurityInformation =
@@ -47,6 +50,10 @@ class StringConst {
   static const String privacySecurityTitle =
       'Your privacy and security information goes here. You can provide details about the privacy policy, data security measures, and any other relevant information to ensure user privacy and security.';
 
+  /// About Screen String
+  static const String aboutOurApp = 'About Our App';
+  static const String descriptionDot = '\u2022 ';
+  static const String aboutUsTitle = 'About Us';
   static const String aboutTitle =
       'Your app description goes here. You can provide information about the purpose of the app, its features, and any other relevant details.';
   static const String aboutDescription =

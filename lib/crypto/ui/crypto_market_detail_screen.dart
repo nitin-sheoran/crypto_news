@@ -1,11 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:news_wave/utils/string_const.dart';
-import 'package:provider/provider.dart';
+import 'package:news_wave/all_imports.dart';
 
 class CryptoMaretDetailScreen extends StatefulWidget {
   const CryptoMaretDetailScreen({required this.cryptoCoinInfo, super.key});
