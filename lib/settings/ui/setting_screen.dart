@@ -1,20 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:news_wave/login/service/google_service.dart';
-import 'package:news_wave/news/provider/news_provider.dart';
-import 'package:news_wave/news/theme/theme_provider.dart';
-import 'package:news_wave/settings/ui/about_us_screen.dart';
-import 'package:news_wave/settings/ui/help_screen.dart';
-import 'package:news_wave/settings/ui/privacy_security_screen.dart';
-import 'package:news_wave/utils/colors_const.dart';
-import 'package:news_wave/utils/string_const.dart';
-import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import '../../login/ui/login_screen.dart';
+import 'package:news_wave/all_imports.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});

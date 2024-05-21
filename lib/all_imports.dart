@@ -27,6 +27,10 @@ export 'package:news_wave/crypto/ui/crypto_coin_list_screen.dart';
 export 'package:news_wave/settings/ui/setting_screen.dart';
 export 'package:news_wave/news/theme/dark_mode_preference.dart';
 export 'package:flutter_email_sender/flutter_email_sender.dart';
+export 'package:news_wave/login/ui/login_screen.dart';
+export 'package:news_wave/settings/ui/about_us_screen.dart';
+export 'package:news_wave/settings/ui/help_screen.dart';
+export 'package:news_wave/settings/ui/privacy_security_screen.dart';
 
 
 
