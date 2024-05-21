@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+import 'package:news_wave/all_imports.dart';
 class ColorsConst {
   static const Color cardColor = Color(0xffF6F7F7);
   static const Color darkColor = Color(0xff1F2125);
