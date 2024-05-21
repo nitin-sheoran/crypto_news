@@ -23,6 +23,8 @@ export 'package:news_wave/login/service/google_service.dart';
 export 'package:news_wave/news/service/news_service.dart';
 export 'package:flutter/services.dart';
 export 'package:news_wave/news/ui/news_information_screen.dart';
+export 'package:news_wave/crypto/ui/crypto_coin_list_screen.dart';
+export 'package:news_wave/settings/ui/setting_screen.dart';
 
 
 
