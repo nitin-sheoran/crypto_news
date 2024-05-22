@@ -20,7 +20,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
 
   void loadSavedCoins() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String>? savedCoinsJson = prefs.getStringList('saved_coins');
+    List<String>? savedCoinsJson = prefs.getStringList(StringConst.savedCoinsKey);
     if (savedCoinsJson != null) {
       setState(() {
         savedCoins = savedCoinsJson
@@ -43,7 +43,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
         surfaceTintColor:
             darkMode ? ColorsConst.blackColor : ColorsConst.whiteColor,
         title: Text(
-          'BookMark Coins',
+          StringConst.bookMarksCoins,
           style: TextStyle(
             color: darkMode ? ColorsConst.whiteColor : ColorsConst.whiteColor,
             fontSize: 20,
@@ -66,7 +66,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
       body: savedCoins.isEmpty
           ?  Center(
               child: Text(
-                'NO BOOKMARK COINS...',
+                StringConst.noBookMarksCoins,
                 style: TextStyle(fontSize: 16,color: darkMode ? ColorsConst.white54Color : Color(0xff37474F)),
               ),
             )
@@ -93,14 +93,14 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                                     : ColorsConst.whiteColor,
                                 elevation: 100,
                                 title: Text(
-                                  'Alert!',
+                                  StringConst.alerts,
                                   style: TextStyle(
                                       color: darkMode
                                           ? ColorsConst.whiteColor
                                           : ColorsConst.blackColor),
                                 ),
                                 content: Text(
-                                  'Are you sure to Delete!',
+                                  StringConst.areYouSureToDelete,
                                   style: TextStyle(
                                       color: darkMode
                                           ? ColorsConst.whiteColor
@@ -112,7 +112,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                                         Navigator.pop(context);
                                       },
                                       child: Text(
-                                        'Cancel',
+                                        StringConst.cancel,
                                         style: TextStyle(
                                             color: darkMode
                                                 ? ColorsConst.whiteColor
@@ -124,7 +124,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                                       Navigator.pop(context);
                                     },
                                     child: Text(
-                                      'Delete',
+                                      StringConst.delete,
                                       style: TextStyle(
                                           color: darkMode
                                               ? ColorsConst.whiteColor
@@ -141,7 +141,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                         backgroundColor: darkMode
                             ? ColorsConst.white54Color
                             : ColorsConst.whiteColor,
-                        label: 'Delete',
+                        label: StringConst.delete,
                       ),
                     ],
                   ),
@@ -223,7 +223,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
                             ),
                           ),
                           Text(
-                            'Market Cap ${formatMarketCap(coinInfo.marketCap!)}',
+                            '${StringConst.marketCap} ${formatMarketCap(coinInfo.marketCap!)}',
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
@@ -257,10 +257,10 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
 
   void removeSavedCoin(int index) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String>? savedCoinsJson = prefs.getStringList('saved_coins');
+    List<String>? savedCoinsJson = prefs.getStringList(StringConst.savedCoinsKey);
     if (savedCoinsJson != null) {
       savedCoinsJson.removeAt(index);
-      prefs.setStringList('saved_coins', savedCoinsJson);
+      prefs.setStringList(StringConst.savedCoinsKey, savedCoinsJson);
       setState(() {
         savedCoins.removeAt(index);
       });

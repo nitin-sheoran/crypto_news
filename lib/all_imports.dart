@@ -1,5 +1,4 @@
 // All Files Imports
-
 export 'dart:convert';
 export 'package:news_wave/crypto/model/crypto_coin_info_model.dart';
 export 'package:flutter/material.dart';
@@ -32,13 +31,3 @@ export 'package:news_wave/settings/ui/about_us_screen.dart';
 export 'package:news_wave/settings/ui/help_screen.dart';
 export 'package:news_wave/settings/ui/privacy_security_screen.dart';
 export 'package:firebase_core/firebase_core.dart';
-
-
-
-
-
-
-
-
-
-

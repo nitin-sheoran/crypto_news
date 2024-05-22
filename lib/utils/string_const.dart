@@ -3,8 +3,16 @@ class StringConst {
   /// Crypto News Screen String
   static const String latestNews = 'Latest News';
   static const String cryptoNews = 'Crypto News';
-
   static const String comingSoonImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9b7ve9oIilsA8oz5bbsrKZvAe2oT7ESuFKKUO3eHWRL0LEnOQnzz4lRHYAg&s';
+
+  /// BookMarks Coins Screen String
+  static const String bookMarksCoins = 'BookMark Coins';
+  static const String noBookMarksCoins = 'NO BOOKMARK COINS...';
+  static const String alerts = 'Alert!';
+  static const String areYouSureToDelete = 'Are you sure to Delete!';
+  static const String cancel = 'Cancel';
+  static const String delete = 'Delete';
+  static const String marketCap = 'Market Cap';
 
 
   static const String settings = 'Settings';
