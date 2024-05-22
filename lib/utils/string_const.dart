@@ -17,6 +17,17 @@ class StringConst {
   static const String coinPrice = 'Coin Price :';
   static const String marketCap1 = 'Market Cap :';
 
+  /// Crypto Market Details Screen String
+  static const String lastUpdate = 'LastUpdate';
+  static const String high24 = 'High24h';
+  static const String low24 = 'Low24h';
+  static const String mCCPerc24 = 'MCCPercentage24h';
+  static const String maxSupply = 'MaxSupply';
+  static const String totalSupply = 'TotalSupply';
+  static const String atl = 'ATL';
+  static const String priceChangePerc24 = 'PriceChangePerc24h';
+  static const String totalVolume = 'Total Volume';
+
 
 
   static const String settings = 'Settings';
@@ -38,7 +49,6 @@ class StringConst {
   static const String coinRemoved = 'Coin removed';
   static const String coinBookMarks = 'Coin BookMark';
   static const String coinBookMark = 'BookMark';
-  static const String marketCap = 'Market Cap';
   static const String savedCoinsKey = 'saved_coins';
   static const String rank = 'Rank';
   static const String name = 'Name';

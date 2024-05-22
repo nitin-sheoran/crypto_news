@@ -231,7 +231,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'LastUpdate',
+                              StringConst.lastUpdate,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -261,7 +261,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'High24h',
+                              StringConst.high24,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -291,7 +291,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Low24h',
+                              StringConst.low24,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -321,7 +321,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'MCCPercentage24h',
+                              StringConst.mCCPerc24,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -356,7 +356,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'MaxSupply',
+                              StringConst.maxSupply,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -387,7 +387,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'TotalSupply',
+                              StringConst.totalSupply,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -417,7 +417,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'ATL',
+                              StringConst.atl,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -447,7 +447,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'PriceChangePerc24h',
+                              StringConst.priceChangePerc24,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -482,7 +482,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Total Volume',
+                              StringConst.totalVolume,
                               style: TextStyle(
                                   fontSize: 14,
                                   color: darkMode
@@ -530,10 +530,10 @@ class MarketStateChart extends StatelessWidget {
   final String date;
 
   const MarketStateChart({
-    Key? key,
+    super.key,
     required this.marketCapChangePercentage24h,
     required this.date,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -546,18 +546,18 @@ class MarketStateChart extends StatelessWidget {
           date,
           style: TextStyle(fontSize: 12, color: color),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Container(
           padding: const EdgeInsets.all(8),
           child: CustomPaint(
-            size: Size(100, 100), // Adjust size as needed
+            size: const Size(100, 100), // Adjust size as needed
             painter: MarketStateChartPainter(
               percentageChange: marketCapChangePercentage24h,
               color: color,
             ),
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           '${marketCapChangePercentage24h.toStringAsFixed(2)}%',
           style: TextStyle(fontSize: 12, color: color),
