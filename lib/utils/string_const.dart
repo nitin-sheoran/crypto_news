@@ -13,6 +13,10 @@ class StringConst {
   static const String cancel = 'Cancel';
   static const String delete = 'Delete';
   static const String marketCap = 'Market Cap';
+  static const String coinName = 'Coin Name :';
+  static const String coinPrice = 'Coin Price :';
+  static const String marketCap1 = 'Market Cap :';
+
 
 
   static const String settings = 'Settings';

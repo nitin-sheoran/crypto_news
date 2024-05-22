@@ -167,7 +167,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                         SlidableAction(
                           onPressed: (context) async {
                             Share.share(
-                              ' Coin Name : ${cryptoCoinInfo.name}\n Coin Price : \u{20B9} ${NumberFormat('#,##0.0').format(cryptoCoinInfo.currentPrice)}\n Market Cap : ${formatMarketCap(cryptoCoinInfo.marketCap!)}',
+                              ' ${StringConst.coinName} ${cryptoCoinInfo.name}\n ${StringConst.coinPrice} \u{20B9} ${NumberFormat('#,##0.0').format(cryptoCoinInfo.currentPrice)}\n ${StringConst.marketCap1} ${formatMarketCap(cryptoCoinInfo.marketCap!)}',
                             );
                           },
                           icon: Icons.share,
