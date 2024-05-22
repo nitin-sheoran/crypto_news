@@ -234,6 +234,7 @@ class _CryptoCoinListScreenState extends State<CryptoCoinListScreen> {
                               ),
                               trailing: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     '\u{20B9} ${NumberFormat('#,##0.0').format(cryptoCoinInfo.currentPrice)}',

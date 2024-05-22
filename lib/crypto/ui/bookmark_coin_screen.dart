@@ -67,7 +67,7 @@ class BookMarkCoinsScreenState extends State<BookMarkCoinsScreen> {
           ?  Center(
               child: Text(
                 'NO BOOKMARK COINS...',
-                style: TextStyle(fontSize: 16,color: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor),
+                style: TextStyle(fontSize: 16,color: darkMode ? ColorsConst.white54Color : Color(0xff37474F)),
               ),
             )
           : ListView.builder(

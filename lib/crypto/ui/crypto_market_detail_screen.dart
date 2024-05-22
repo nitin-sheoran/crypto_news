@@ -49,7 +49,7 @@ class _CryptoMaretDetailScreenState extends State<CryptoMaretDetailScreen> {
         )),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8, top: 20, bottom: 8),
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 20),
         child: Column(
           children: [
             SizedBox(
@@ -544,7 +544,7 @@ class MarketStateChart extends StatelessWidget {
       children: [
         Text(
           date,
-          style: TextStyle(fontSize: 12, color: Colors.black),
+          style: TextStyle(fontSize: 12, color: color),
         ),
         SizedBox(height: 8),
         Container(
