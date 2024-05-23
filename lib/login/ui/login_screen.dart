@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           : Stack(
               children: [
                 Image.asset(
-                  'assets/images/loginimages.jpg',
+                  StringConst.loginImage,
                   height: double.infinity,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                'Continue With',
+                                StringConst.continueWith,
                                 style: TextStyle(
                                   color: Colors.black54,
                                   fontWeight: FontWeight.w600,
@@ -77,32 +77,32 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               SizedBox(width: 8),
                               Text(
-                                'G',
+                                StringConst.bigG,
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 24),
+                                    color: ColorsConst.blueColor, fontSize: 24),
                               ),
-                              Text('o',
+                              Text(StringConst.o,
                                   style: TextStyle(
-                                      color: Colors.red, fontSize: 24)),
+                                      color: ColorsConst.redColor, fontSize: 24)),
                               Text(
-                                'o',
+                                StringConst.o,
                                 style: TextStyle(
-                                    color: Colors.yellow, fontSize: 24),
+                                    color: ColorsConst.yellowColor, fontSize: 24),
                               ),
                               Text(
-                                'g',
+                                StringConst.g,
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 24),
+                                    color: ColorsConst.blueColor, fontSize: 24),
                               ),
                               Text(
-                                'l',
+                                StringConst.l,
                                 style: TextStyle(
-                                    color: Colors.green, fontSize: 24),
+                                    color: ColorsConst.greenColor, fontSize: 24),
                               ),
                               Text(
-                                'e',
+                                StringConst.e,
                                 style: TextStyle(
-                                    color: Colors.red, fontSize: 24),
+                                    color: ColorsConst.redColor, fontSize: 24),
                               ),
                             ],
                           ),

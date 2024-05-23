@@ -17,6 +17,15 @@ class StringConst {
   static const String coinPrice = 'Coin Price :';
   static const String marketCap1 = 'Market Cap :';
 
+  /// Login Screen String
+  static const String loginImage = 'assets/images/loginimages.jpg';
+  static const String continueWith = 'Continue With';
+  static const String bigG = 'G';
+  static const String o = 'o';
+  static const String g = 'g';
+  static const String l = 'l';
+  static const String e = 'e';
+
   /// Crypto Market Details Screen String
   static const String lastUpdate = 'LastUpdate';
   static const String high24 = 'High24h';
