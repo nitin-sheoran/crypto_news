@@ -26,6 +26,12 @@ class StringConst {
   static const String l = 'l';
   static const String e = 'e';
 
+  /// BottomTab Bar String
+  static const String allNews = 'All News';
+  static const String business = 'Business';
+  static const String entertainment = 'Entertainment';
+  static const String health = 'Health';
+
   /// Crypto Market Details Screen String
   static const String lastUpdate = 'LastUpdate';
   static const String high24 = 'High24h';

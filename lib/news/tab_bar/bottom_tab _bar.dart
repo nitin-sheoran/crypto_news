@@ -14,10 +14,10 @@ class TabScreenState extends State<TabScreen>
   int pageSize = 10;
 
   final List<Tab> topTabs = <Tab>[
-    const Tab(text: 'Everything'),
-    const Tab(text: 'Business'),
-    const Tab(text: 'Entertainment'),
-    const Tab(text: 'Health'),
+    const Tab(text: StringConst.allNews),
+    const Tab(text: StringConst.business),
+    const Tab(text: StringConst.entertainment),
+    const Tab(text: StringConst.health),
   ];
 
   @override
@@ -46,10 +46,10 @@ class TabScreenState extends State<TabScreen>
             controller: tabController,
             indicatorColor: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
             tabs: const [
-              Tab(text: 'All News'),
-              Tab(text: 'Business'),
-              Tab(text: 'Entertainment'),
-              Tab(text: 'Health'),
+              Tab(text: StringConst.allNews),
+              Tab(text: StringConst.business),
+              Tab(text: StringConst.entertainment),
+              Tab(text: StringConst.health),
             ],
             labelColor:
                 darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
