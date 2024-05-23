@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: list[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: darkMode ? Color(0xff1F2125) : const Color(0xffF6F7F7),
+        backgroundColor: darkMode ? const Color(0xff1F2125) : const Color(0xffF6F7F7),
         currentIndex: currentIndex,
         showUnselectedLabels: true,
         showSelectedLabels: true,
@@ -33,15 +33,15 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = index;
           });
         },
-        selectedItemColor: darkMode ? Colors.blue : Colors.blue,
+        selectedItemColor: darkMode ? ColorsConst.blueColor : ColorsConst.blueColor,
         unselectedItemColor: darkMode ? Colors.white38 : Colors.grey[400],
         items:  [
            BottomNavigationBarItem(
             icon: const Icon(
               Icons.home,
             ),
-            label: "Home",
-            backgroundColor: darkMode ?ColorsConst.whiteColor : Colors.black,
+            label: StringConst.home,
+            backgroundColor: darkMode ?ColorsConst.whiteColor : ColorsConst.blackColor,
           ),
           // BottomNavigationBarItem(
           //   icon: const Icon(
@@ -54,15 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(
               Icons.bar_chart,
             ),
-            label: "Market",
-            backgroundColor: darkMode ? Colors.white : Colors.black,
+            label: StringConst.market,
+            backgroundColor: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
           ),
           BottomNavigationBarItem(
             icon: const Icon(
               Icons.settings,
             ),
-            label: "Settings",
-            backgroundColor: darkMode ? Colors.white : Colors.black,
+            label: StringConst.settings,
+            backgroundColor: darkMode ? ColorsConst.whiteColor : ColorsConst.blackColor,
           ),
         ],
 

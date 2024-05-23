@@ -32,6 +32,10 @@ class StringConst {
   static const String entertainment = 'Entertainment';
   static const String health = 'Health';
 
+  /// NavigationBar String
+  static const String home = 'Home';
+  static const String market = 'Market';
+
   /// Crypto Market Details Screen String
   static const String lastUpdate = 'LastUpdate';
   static const String high24 = 'High24h';
