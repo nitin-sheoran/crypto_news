@@ -63,6 +63,7 @@ class NewsScreen extends State<NewsInformationScreen> {
                           height: 160.0,
                           viewportFraction: 0.7,
                           enlargeCenterPage: true,
+                          autoPlay: true
                         ),
                         items: articles?.map((article) {
                               return Builder(
